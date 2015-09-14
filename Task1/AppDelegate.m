@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import "MapViewController.h"
+#import "CoordinatesViewController.h"
+#import "ListViewController.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +19,20 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    MapViewController *mapViewController = [[MapViewController alloc] init];
+    CoordinatesViewController *coordinatesViewController = [[CoordinatesViewController alloc] init];
+    ListViewController *listViewController = [[ListViewController alloc] init];
+    
+    UITabBarController *tabBarController = [[UITabBarController alloc] init];
+    UINavigationController* coordinatesNavController = [[UINavigationController alloc] initWithRootViewController:coordinatesViewController];
+    
+    [tabBarController setViewControllers:@[mapViewController, coordinatesNavController, listViewController]];
+    self.window.rootViewController = tabBarController;
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.rootViewController = tabBarController;
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 

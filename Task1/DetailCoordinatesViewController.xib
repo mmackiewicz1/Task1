@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailCoordinatesViewController">
+            <connections>
+                <outlet property="inputLatitude" destination="JhG-hf-LVr" id="EDn-Jg-z9u"/>
+                <outlet property="inputLongitude" destination="bGw-CL-gNh" id="JBh-C4-bQg"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Latitude" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JhG-hf-LVr" userLabel="Latitude">
+                    <rect key="frame" x="10" y="80" width="300" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Longitude" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bGw-CL-gNh">
+                    <rect key="frame" x="10" y="120" width="300" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="loU-OT-SDl">
+                    <rect key="frame" x="10" y="170" width="300" height="30"/>
+                    <state key="normal" title="Submit">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="submitCoordinates:" destination="-1" eventType="touchUpInside" id="Lkp-Z4-4MI"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="JhG-hf-LVr" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="80" id="9DI-gl-hCE"/>
+                <constraint firstItem="loU-OT-SDl" firstAttribute="top" secondItem="bGw-CL-gNh" secondAttribute="bottom" constant="20" id="GQc-Gd-pSO"/>
+                <constraint firstAttribute="trailing" secondItem="bGw-CL-gNh" secondAttribute="trailing" constant="10" id="Ndv-zg-d8x"/>
+                <constraint firstItem="bGw-CL-gNh" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="T4f-8C-27k"/>
+                <constraint firstItem="bGw-CL-gNh" firstAttribute="top" secondItem="JhG-hf-LVr" secondAttribute="bottom" constant="10" id="eOr-4h-XuG"/>
+                <constraint firstItem="JhG-hf-LVr" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="gV7-I8-Foe"/>
+                <constraint firstAttribute="trailing" secondItem="JhG-hf-LVr" secondAttribute="trailing" constant="10" id="hG8-g7-DMV"/>
+                <constraint firstAttribute="trailing" secondItem="loU-OT-SDl" secondAttribute="trailing" constant="10" id="lHX-Uy-PuD"/>
+                <constraint firstItem="loU-OT-SDl" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="wej-sG-8bG"/>
+            </constraints>
+            <point key="canvasLocation" x="410" y="313"/>
+        </view>
+    </objects>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

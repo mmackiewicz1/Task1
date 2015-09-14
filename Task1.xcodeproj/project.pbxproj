@@ -10,11 +10,27 @@
 		D25E07D21BA1C80400C3C586 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D25E07D11BA1C80400C3C586 /* main.m */; };
 		D25E07D51BA1C80400C3C586 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D25E07D41BA1C80400C3C586 /* AppDelegate.m */; };
 		D25E07D81BA1C80400C3C586 /* Task1.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D25E07D61BA1C80400C3C586 /* Task1.xcdatamodeld */; };
-		D25E07DB1BA1C80400C3C586 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D25E07DA1BA1C80400C3C586 /* ViewController.m */; };
-		D25E07DE1BA1C80400C3C586 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D25E07DC1BA1C80400C3C586 /* Main.storyboard */; };
 		D25E07E01BA1C80400C3C586 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D25E07DF1BA1C80400C3C586 /* Images.xcassets */; };
-		D25E07E31BA1C80400C3C586 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D25E07E11BA1C80400C3C586 /* LaunchScreen.xib */; };
 		D25E07EF1BA1C80400C3C586 /* Task1Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = D25E07EE1BA1C80400C3C586 /* Task1Tests.m */; };
+		D25E07FB1BA2A72500C3C586 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D25E07F91BA2A72500C3C586 /* MapViewController.m */; };
+		D25E07FC1BA2A72500C3C586 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D25E07FA1BA2A72500C3C586 /* MapViewController.xib */; };
+		D25E08051BA2A82600C3C586 /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D25E08031BA2A82600C3C586 /* ListViewController.m */; };
+		D25E08061BA2A82600C3C586 /* ListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D25E08041BA2A82600C3C586 /* ListViewController.xib */; };
+		D25E08091BA2AAD100C3C586 /* Annotation.m in Sources */ = {isa = PBXBuildFile; fileRef = D25E08081BA2AAD100C3C586 /* Annotation.m */; };
+		D25E080B1BA2B04F00C3C586 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D25E080A1BA2B04F00C3C586 /* MapKit.framework */; };
+		D25E080E1BA2BBE900C3C586 /* Coordinates.m in Sources */ = {isa = PBXBuildFile; fileRef = D25E080D1BA2BBE900C3C586 /* Coordinates.m */; };
+		D25E08121BA2BDA700C3C586 /* CoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D25E08111BA2BDA700C3C586 /* CoreDataHelper.m */; };
+		D25E081D1BA2CD8200C3C586 /* CoordinatesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D25E081B1BA2CD8200C3C586 /* CoordinatesViewController.m */; };
+		D25E081E1BA2CD8200C3C586 /* CoordinatesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D25E081C1BA2CD8200C3C586 /* CoordinatesViewController.xib */; };
+		D25E08221BA2CF5600C3C586 /* CoordinatesViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D25E08201BA2CF5600C3C586 /* CoordinatesViewCell.m */; };
+		D25E08231BA2CF5600C3C586 /* CoordinatesViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D25E08211BA2CF5600C3C586 /* CoordinatesViewCell.xib */; };
+		D25E08271BA3083300C3C586 /* DetailCoordinatesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D25E08251BA3083300C3C586 /* DetailCoordinatesViewController.m */; };
+		D25E08281BA3083300C3C586 /* DetailCoordinatesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D25E08261BA3083300C3C586 /* DetailCoordinatesViewController.xib */; };
+		D25E082A1BA6A6E700C3C586 /* table_indicator.png in Resources */ = {isa = PBXBuildFile; fileRef = D25E08291BA6A6E700C3C586 /* table_indicator.png */; };
+		D25E08331BA6BCF000C3C586 /* FlickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D25E08311BA6BCF000C3C586 /* FlickerViewController.m */; };
+		D25E08341BA6BCF000C3C586 /* FlickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D25E08321BA6BCF000C3C586 /* FlickerViewController.xib */; };
+		D25E083D1BA6C34D00C3C586 /* FlickerCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D25E083B1BA6C34D00C3C586 /* FlickerCollectionViewCell.m */; };
+		D25E083E1BA6C34D00C3C586 /* FlickerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D25E083C1BA6C34D00C3C586 /* FlickerCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,14 +50,39 @@
 		D25E07D31BA1C80400C3C586 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D25E07D41BA1C80400C3C586 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		D25E07D71BA1C80400C3C586 /* Task1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Task1.xcdatamodel; sourceTree = "<group>"; };
-		D25E07D91BA1C80400C3C586 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		D25E07DA1BA1C80400C3C586 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		D25E07DD1BA1C80400C3C586 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D25E07DF1BA1C80400C3C586 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		D25E07E21BA1C80400C3C586 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		D25E07E81BA1C80400C3C586 /* Task1Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Task1Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D25E07ED1BA1C80400C3C586 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D25E07EE1BA1C80400C3C586 /* Task1Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Task1Tests.m; sourceTree = "<group>"; };
+		D25E07F81BA2A72500C3C586 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		D25E07F91BA2A72500C3C586 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		D25E07FA1BA2A72500C3C586 /* MapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
+		D25E08021BA2A82600C3C586 /* ListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewController.h; sourceTree = "<group>"; };
+		D25E08031BA2A82600C3C586 /* ListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
+		D25E08041BA2A82600C3C586 /* ListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ListViewController.xib; sourceTree = "<group>"; };
+		D25E08071BA2AAD100C3C586 /* Annotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Annotation.h; sourceTree = "<group>"; };
+		D25E08081BA2AAD100C3C586 /* Annotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Annotation.m; sourceTree = "<group>"; };
+		D25E080A1BA2B04F00C3C586 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		D25E080C1BA2BBE900C3C586 /* Coordinates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Coordinates.h; sourceTree = "<group>"; };
+		D25E080D1BA2BBE900C3C586 /* Coordinates.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Coordinates.m; sourceTree = "<group>"; };
+		D25E08101BA2BDA700C3C586 /* CoreDataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataHelper.h; sourceTree = "<group>"; };
+		D25E08111BA2BDA700C3C586 /* CoreDataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataHelper.m; sourceTree = "<group>"; };
+		D25E081A1BA2CD8200C3C586 /* CoordinatesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoordinatesViewController.h; sourceTree = "<group>"; };
+		D25E081B1BA2CD8200C3C586 /* CoordinatesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoordinatesViewController.m; sourceTree = "<group>"; };
+		D25E081C1BA2CD8200C3C586 /* CoordinatesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CoordinatesViewController.xib; sourceTree = "<group>"; };
+		D25E081F1BA2CF5600C3C586 /* CoordinatesViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoordinatesViewCell.h; sourceTree = "<group>"; };
+		D25E08201BA2CF5600C3C586 /* CoordinatesViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoordinatesViewCell.m; sourceTree = "<group>"; };
+		D25E08211BA2CF5600C3C586 /* CoordinatesViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CoordinatesViewCell.xib; sourceTree = "<group>"; };
+		D25E08241BA3083300C3C586 /* DetailCoordinatesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailCoordinatesViewController.h; sourceTree = "<group>"; };
+		D25E08251BA3083300C3C586 /* DetailCoordinatesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailCoordinatesViewController.m; sourceTree = "<group>"; };
+		D25E08261BA3083300C3C586 /* DetailCoordinatesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailCoordinatesViewController.xib; sourceTree = "<group>"; };
+		D25E08291BA6A6E700C3C586 /* table_indicator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = table_indicator.png; path = ../../../../Downloads/table_indicator.png; sourceTree = "<group>"; };
+		D25E08301BA6BCF000C3C586 /* FlickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickerViewController.h; sourceTree = "<group>"; };
+		D25E08311BA6BCF000C3C586 /* FlickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickerViewController.m; sourceTree = "<group>"; };
+		D25E08321BA6BCF000C3C586 /* FlickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FlickerViewController.xib; sourceTree = "<group>"; };
+		D25E083A1BA6C34D00C3C586 /* FlickerCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickerCollectionViewCell.h; sourceTree = "<group>"; };
+		D25E083B1BA6C34D00C3C586 /* FlickerCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickerCollectionViewCell.m; sourceTree = "<group>"; };
+		D25E083C1BA6C34D00C3C586 /* FlickerCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FlickerCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D25E080B1BA2B04F00C3C586 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +107,7 @@
 		D25E07C31BA1C80400C3C586 = {
 			isa = PBXGroup;
 			children = (
+				D25E080A1BA2B04F00C3C586 /* MapKit.framework */,
 				D25E07CE1BA1C80400C3C586 /* Task1 */,
 				D25E07EB1BA1C80400C3C586 /* Task1Tests */,
 				D25E07CD1BA1C80400C3C586 /* Products */,
@@ -83,13 +126,31 @@
 		D25E07CE1BA1C80400C3C586 /* Task1 */ = {
 			isa = PBXGroup;
 			children = (
+				D25E080F1BA2BBF300C3C586 /* Model */,
 				D25E07D31BA1C80400C3C586 /* AppDelegate.h */,
 				D25E07D41BA1C80400C3C586 /* AppDelegate.m */,
-				D25E07D91BA1C80400C3C586 /* ViewController.h */,
-				D25E07DA1BA1C80400C3C586 /* ViewController.m */,
-				D25E07DC1BA1C80400C3C586 /* Main.storyboard */,
+				D25E07F81BA2A72500C3C586 /* MapViewController.h */,
+				D25E07F91BA2A72500C3C586 /* MapViewController.m */,
+				D25E07FA1BA2A72500C3C586 /* MapViewController.xib */,
+				D25E081A1BA2CD8200C3C586 /* CoordinatesViewController.h */,
+				D25E081B1BA2CD8200C3C586 /* CoordinatesViewController.m */,
+				D25E081C1BA2CD8200C3C586 /* CoordinatesViewController.xib */,
+				D25E081F1BA2CF5600C3C586 /* CoordinatesViewCell.h */,
+				D25E08201BA2CF5600C3C586 /* CoordinatesViewCell.m */,
+				D25E08211BA2CF5600C3C586 /* CoordinatesViewCell.xib */,
+				D25E08241BA3083300C3C586 /* DetailCoordinatesViewController.h */,
+				D25E08251BA3083300C3C586 /* DetailCoordinatesViewController.m */,
+				D25E08261BA3083300C3C586 /* DetailCoordinatesViewController.xib */,
+				D25E08021BA2A82600C3C586 /* ListViewController.h */,
+				D25E08031BA2A82600C3C586 /* ListViewController.m */,
+				D25E08041BA2A82600C3C586 /* ListViewController.xib */,
+				D25E08301BA6BCF000C3C586 /* FlickerViewController.h */,
+				D25E08311BA6BCF000C3C586 /* FlickerViewController.m */,
+				D25E08321BA6BCF000C3C586 /* FlickerViewController.xib */,
+				D25E083A1BA6C34D00C3C586 /* FlickerCollectionViewCell.h */,
+				D25E083B1BA6C34D00C3C586 /* FlickerCollectionViewCell.m */,
+				D25E083C1BA6C34D00C3C586 /* FlickerCollectionViewCell.xib */,
 				D25E07DF1BA1C80400C3C586 /* Images.xcassets */,
-				D25E07E11BA1C80400C3C586 /* LaunchScreen.xib */,
 				D25E07D61BA1C80400C3C586 /* Task1.xcdatamodeld */,
 				D25E07CF1BA1C80400C3C586 /* Supporting Files */,
 			);
@@ -99,8 +160,11 @@
 		D25E07CF1BA1C80400C3C586 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D25E08291BA6A6E700C3C586 /* table_indicator.png */,
 				D25E07D01BA1C80400C3C586 /* Info.plist */,
 				D25E07D11BA1C80400C3C586 /* main.m */,
+				D25E08101BA2BDA700C3C586 /* CoreDataHelper.h */,
+				D25E08111BA2BDA700C3C586 /* CoreDataHelper.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -120,6 +184,17 @@
 				D25E07ED1BA1C80400C3C586 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D25E080F1BA2BBF300C3C586 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D25E08071BA2AAD100C3C586 /* Annotation.h */,
+				D25E08081BA2AAD100C3C586 /* Annotation.m */,
+				D25E080C1BA2BBE900C3C586 /* Coordinates.h */,
+				D25E080D1BA2BBE900C3C586 /* Coordinates.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,9 +277,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D25E07DE1BA1C80400C3C586 /* Main.storyboard in Resources */,
-				D25E07E31BA1C80400C3C586 /* LaunchScreen.xib in Resources */,
+				D25E081E1BA2CD8200C3C586 /* CoordinatesViewController.xib in Resources */,
+				D25E08341BA6BCF000C3C586 /* FlickerViewController.xib in Resources */,
+				D25E083E1BA6C34D00C3C586 /* FlickerCollectionViewCell.xib in Resources */,
 				D25E07E01BA1C80400C3C586 /* Images.xcassets in Resources */,
+				D25E08231BA2CF5600C3C586 /* CoordinatesViewCell.xib in Resources */,
+				D25E08281BA3083300C3C586 /* DetailCoordinatesViewController.xib in Resources */,
+				D25E082A1BA6A6E700C3C586 /* table_indicator.png in Resources */,
+				D25E08061BA2A82600C3C586 /* ListViewController.xib in Resources */,
+				D25E07FC1BA2A72500C3C586 /* MapViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,9 +304,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				D25E07D51BA1C80400C3C586 /* AppDelegate.m in Sources */,
+				D25E08331BA6BCF000C3C586 /* FlickerViewController.m in Sources */,
+				D25E08051BA2A82600C3C586 /* ListViewController.m in Sources */,
+				D25E08221BA2CF5600C3C586 /* CoordinatesViewCell.m in Sources */,
+				D25E08121BA2BDA700C3C586 /* CoreDataHelper.m in Sources */,
+				D25E08271BA3083300C3C586 /* DetailCoordinatesViewController.m in Sources */,
+				D25E080E1BA2BBE900C3C586 /* Coordinates.m in Sources */,
+				D25E08091BA2AAD100C3C586 /* Annotation.m in Sources */,
 				D25E07D81BA1C80400C3C586 /* Task1.xcdatamodeld in Sources */,
-				D25E07DB1BA1C80400C3C586 /* ViewController.m in Sources */,
 				D25E07D21BA1C80400C3C586 /* main.m in Sources */,
+				D25E081D1BA2CD8200C3C586 /* CoordinatesViewController.m in Sources */,
+				D25E083D1BA6C34D00C3C586 /* FlickerCollectionViewCell.m in Sources */,
+				D25E07FB1BA2A72500C3C586 /* MapViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,25 +336,6 @@
 			targetProxy = D25E07E91BA1C80400C3C586 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		D25E07DC1BA1C80400C3C586 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D25E07DD1BA1C80400C3C586 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		D25E07E11BA1C80400C3C586 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D25E07E21BA1C80400C3C586 /* Base */,
-			);
-			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		D25E07F01BA1C80400C3C586 /* Debug */ = {
@@ -422,6 +493,7 @@
 				D25E07F41BA1C80400C3C586 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D25E07F51BA1C80400C3C586 /* Build configuration list for PBXNativeTarget "Task1Tests" */ = {
 			isa = XCConfigurationList;
@@ -430,6 +502,7 @@
 				D25E07F71BA1C80400C3C586 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
