@@ -48,6 +48,12 @@
     }
 }
 
+- (void) viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.mapView removeAnnotations:self.mapView.annotations];
+    [self loadCoordinates];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

@@ -8,6 +8,7 @@
 
 #import "FlickerViewController.h"
 #import "FlickerCollectionViewCell.h"
+#import "DetailImageViewController.h"
 
 @interface FlickerViewController ()
 
@@ -16,12 +17,15 @@
 @implementation FlickerViewController
 
 NSMutableArray *photoArray;
+NSMutableArray *idArray;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
+    
     photoArray = [[NSMutableArray alloc] init];
+    idArray = [[NSMutableArray alloc] init];
     UINib *cellNib = [UINib nibWithNibName:@"FlickerCollectionViewCell" bundle:nil];
     [self.collectionView registerNib:cellNib forCellWithReuseIdentifier:@"FlickerCollectionViewCell"];
 
@@ -31,7 +35,7 @@ NSMutableArray *photoArray;
     NSDictionary* json = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
     NSArray *photos = [json[@"photos"] objectForKey:@"photo"];
     
-    for(NSDictionary* photo in photos) {
+    for (NSDictionary* photo in photos) {
         //NSLog(@"%@", photo[@"id"]);
         
         NSURL* photoUrl = [NSURL URLWithString:[NSString stringWithFormat:@"https://api.flickr.com/services/rest/?method=flickr.photos.getSizes&api_key=706914e74f4da7d2a5337f9630dc7c19&photo_id=%@&format=json&nojsoncallback=1", photo[@"id"]]];
@@ -46,6 +50,8 @@ NSMutableArray *photoArray;
         UIImage *image = [[UIImage alloc] initWithData:imageData];
         
         [photoArray addObject: image];
+        [idArray addObject: photo[@"id"]];
+        NSLog(@"Added id: %@", photo[@"id"]);
     }
 
 }
@@ -88,7 +94,10 @@ NSMutableArray *photoArray;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"Clicked cell nubmer: %lu", indexPath.row);
+    DetailImageViewController *detailImageViewController = [[DetailImageViewController alloc] initWithNibName:@"DetailImageViewController" bundle:nil];
+    detailImageViewController.imageId = [idArray objectAtIndex: indexPath.row];
+    
+    [self.navigationController pushViewController:detailImageViewController animated:YES];
 }
 
 @end

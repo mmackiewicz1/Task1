@@ -13,6 +13,7 @@
 #import "FlickerViewController.h"
 
 @interface CoordinatesViewController ()
+@property (strong, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicatorView;
 
 @end
 
@@ -45,6 +46,12 @@ NSMutableArray *coordinatesList;
 }
 
 - (void)didDismissDetailCoordinatesViewController {
+    coordinatesList = [[NSMutableArray alloc] initWithArray:[CoreDataHelper fetchDataWithEntityName: @"Coordinates"]];
+    [self.tableView reloadData];
+}
+
+- (void) viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     coordinatesList = [[NSMutableArray alloc] initWithArray:[CoreDataHelper fetchDataWithEntityName: @"Coordinates"]];
     [self.tableView reloadData];
 }

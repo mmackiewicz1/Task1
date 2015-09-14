@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface DetailImageViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property(weak, nonatomic) NSString* imageId;
 
 @end
