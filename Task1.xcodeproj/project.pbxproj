@@ -31,6 +31,8 @@
 		D25E08341BA6BCF000C3C586 /* FlickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D25E08321BA6BCF000C3C586 /* FlickerViewController.xib */; };
 		D25E083D1BA6C34D00C3C586 /* FlickerCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D25E083B1BA6C34D00C3C586 /* FlickerCollectionViewCell.m */; };
 		D25E083E1BA6C34D00C3C586 /* FlickerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D25E083C1BA6C34D00C3C586 /* FlickerCollectionViewCell.xib */; };
+		D25E08471BA700F100C3C586 /* DetailImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D25E08451BA700F100C3C586 /* DetailImageViewController.m */; };
+		D25E08481BA700F100C3C586 /* DetailImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D25E08461BA700F100C3C586 /* DetailImageViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +85,9 @@
 		D25E083A1BA6C34D00C3C586 /* FlickerCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickerCollectionViewCell.h; sourceTree = "<group>"; };
 		D25E083B1BA6C34D00C3C586 /* FlickerCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickerCollectionViewCell.m; sourceTree = "<group>"; };
 		D25E083C1BA6C34D00C3C586 /* FlickerCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FlickerCollectionViewCell.xib; sourceTree = "<group>"; };
+		D25E08441BA700F100C3C586 /* DetailImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailImageViewController.h; sourceTree = "<group>"; };
+		D25E08451BA700F100C3C586 /* DetailImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailImageViewController.m; sourceTree = "<group>"; };
+		D25E08461BA700F100C3C586 /* DetailImageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailImageViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +155,9 @@
 				D25E083A1BA6C34D00C3C586 /* FlickerCollectionViewCell.h */,
 				D25E083B1BA6C34D00C3C586 /* FlickerCollectionViewCell.m */,
 				D25E083C1BA6C34D00C3C586 /* FlickerCollectionViewCell.xib */,
+				D25E08441BA700F100C3C586 /* DetailImageViewController.h */,
+				D25E08451BA700F100C3C586 /* DetailImageViewController.m */,
+				D25E08461BA700F100C3C586 /* DetailImageViewController.xib */,
 				D25E07DF1BA1C80400C3C586 /* Images.xcassets */,
 				D25E07D61BA1C80400C3C586 /* Task1.xcdatamodeld */,
 				D25E07CF1BA1C80400C3C586 /* Supporting Files */,
@@ -278,6 +286,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D25E081E1BA2CD8200C3C586 /* CoordinatesViewController.xib in Resources */,
+				D25E08481BA700F100C3C586 /* DetailImageViewController.xib in Resources */,
 				D25E08341BA6BCF000C3C586 /* FlickerViewController.xib in Resources */,
 				D25E083E1BA6C34D00C3C586 /* FlickerCollectionViewCell.xib in Resources */,
 				D25E07E01BA1C80400C3C586 /* Images.xcassets in Resources */,
@@ -306,6 +315,7 @@
 				D25E07D51BA1C80400C3C586 /* AppDelegate.m in Sources */,
 				D25E08331BA6BCF000C3C586 /* FlickerViewController.m in Sources */,
 				D25E08051BA2A82600C3C586 /* ListViewController.m in Sources */,
+				D25E08471BA700F100C3C586 /* DetailImageViewController.m in Sources */,
 				D25E08221BA2CF5600C3C586 /* CoordinatesViewCell.m in Sources */,
 				D25E08121BA2BDA700C3C586 /* CoreDataHelper.m in Sources */,
 				D25E08271BA3083300C3C586 /* DetailCoordinatesViewController.m in Sources */,
