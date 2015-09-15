@@ -55,8 +55,8 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wyI-lH-yTZ">
-                    <rect key="frame" x="144" y="269" width="33" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wyI-lH-yTZ">
+                    <rect key="frame" x="10" y="200" width="300" height="30"/>
                     <state key="normal" title="Start">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -74,9 +74,20 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="puM-XC-CQv">
+                    <rect key="frame" x="10" y="240" width="300" height="30"/>
+                    <state key="normal" title="Reset">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="resetOperations:" destination="-1" eventType="touchUpInside" id="WS0-qQ-KxM"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="wyI-lH-yTZ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="200" id="1sf-0C-qoQ"/>
+                <constraint firstAttribute="trailing" secondItem="puM-XC-CQv" secondAttribute="trailing" constant="10" id="9sJ-cP-AuC"/>
                 <constraint firstItem="18b-nC-y1n" firstAttribute="top" secondItem="fZ1-5H-aaM" secondAttribute="bottom" constant="20" id="AId-oF-M7u"/>
                 <constraint firstAttribute="trailing" secondItem="fZ1-5H-aaM" secondAttribute="trailing" constant="10" id="Ecx-uI-YXt"/>
                 <constraint firstItem="TIv-Nx-RBt" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="IDF-of-Wrf"/>
@@ -84,13 +95,17 @@
                 <constraint firstItem="fZ1-5H-aaM" firstAttribute="top" secondItem="I6s-cU-clm" secondAttribute="bottom" constant="20" id="OCi-Ed-MAV"/>
                 <constraint firstItem="AdB-7Y-V7N" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="Pfb-NP-0OZ"/>
                 <constraint firstAttribute="trailing" secondItem="AdB-7Y-V7N" secondAttribute="trailing" constant="220" id="QuS-lP-eXq"/>
+                <constraint firstItem="puM-XC-CQv" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="VUQ-or-7KV"/>
                 <constraint firstAttribute="trailing" secondItem="TIv-Nx-RBt" secondAttribute="trailing" constant="220" id="Wpj-gA-bya"/>
                 <constraint firstItem="emt-31-N3K" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="30" id="YpB-ZV-Zgx"/>
+                <constraint firstItem="puM-XC-CQv" firstAttribute="top" secondItem="wyI-lH-yTZ" secondAttribute="bottom" constant="10" id="cy3-P1-FOT"/>
                 <constraint firstAttribute="trailing" secondItem="I6s-cU-clm" secondAttribute="trailing" constant="10" id="gcK-w5-ZJO"/>
                 <constraint firstItem="AdB-7Y-V7N" firstAttribute="top" secondItem="TIv-Nx-RBt" secondAttribute="bottom" constant="20" id="hO5-xv-fbW"/>
+                <constraint firstAttribute="trailing" secondItem="wyI-lH-yTZ" secondAttribute="trailing" constant="10" id="obd-0v-DUQ"/>
                 <constraint firstAttribute="trailing" secondItem="18b-nC-y1n" secondAttribute="trailing" constant="10" id="qKZ-O4-E6Q"/>
                 <constraint firstItem="TIv-Nx-RBt" firstAttribute="top" secondItem="emt-31-N3K" secondAttribute="bottom" constant="20" id="rRH-nG-F8q"/>
                 <constraint firstItem="emt-31-N3K" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="thH-Fp-wDM"/>
+                <constraint firstItem="wyI-lH-yTZ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="u2A-Ux-Vno"/>
                 <constraint firstItem="I6s-cU-clm" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="35" id="w1P-Np-AQx"/>
             </constraints>
             <point key="canvasLocation" x="610" y="421"/>

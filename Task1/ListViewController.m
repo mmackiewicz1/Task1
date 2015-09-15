@@ -18,6 +18,7 @@
 @property (nonatomic, strong) NSInvocationOperation *thirdOperation;
 @property (nonatomic, strong) NSOperationQueue *operationQueue;
 - (IBAction)startOperations:(id)sender;
+- (IBAction)resetOperations:(id)sender;
 @end
 
 @implementation ListViewController
@@ -33,7 +34,6 @@
     self.squareOne.backgroundColor = [UIColor redColor];
     self.squareTwo.backgroundColor = [UIColor redColor];
     self.squareThree.backgroundColor = [UIColor redColor];
-    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)didReceiveMemoryWarning {
@@ -114,6 +114,12 @@
     [self.operationQueue addOperation:self.firstOperation];
     [self.operationQueue addOperation:self.secondOperation];
     [self.operationQueue addOperation:self.thirdOperation];
+}
+
+- (IBAction)resetOperations:(id)sender {
+    self.squareOne.backgroundColor = [UIColor redColor];
+    self.squareTwo.backgroundColor = [UIColor redColor];
+    self.squareThree.backgroundColor = [UIColor redColor];
 }
 
 @end
