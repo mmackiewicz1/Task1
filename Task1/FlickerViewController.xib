@@ -15,8 +15,8 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="wQp-Xm-a2f">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="wQp-Xm-a2f">
+                    <rect key="frame" x="0.0" y="10" width="320" height="528"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="G2W-Jh-KFd">
                         <size key="itemSize" width="50" height="50"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -26,6 +26,12 @@
                 </collectionView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="wQp-Xm-a2f" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="MTe-1U-cbN"/>
+                <constraint firstItem="wQp-Xm-a2f" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="10" id="OYw-Fc-hxX"/>
+                <constraint firstAttribute="trailing" secondItem="wQp-Xm-a2f" secondAttribute="trailing" id="Qeo-hd-2YF"/>
+                <constraint firstAttribute="bottom" secondItem="wQp-Xm-a2f" secondAttribute="bottom" constant="30" id="TZu-Hy-7kQ"/>
+            </constraints>
             <point key="canvasLocation" x="480" y="421"/>
         </view>
     </objects>

@@ -108,6 +108,7 @@
                 <constraint firstItem="wyI-lH-yTZ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="u2A-Ux-Vno"/>
                 <constraint firstItem="I6s-cU-clm" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="35" id="w1P-Np-AQx"/>
             </constraints>
+            <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
             <point key="canvasLocation" x="610" y="421"/>
         </view>
     </objects>

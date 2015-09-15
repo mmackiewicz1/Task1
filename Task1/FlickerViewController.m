@@ -14,6 +14,8 @@
 @property(atomic, strong) NSMutableArray *photoArray;
 @property(atomic, strong) NSMutableArray *idArray;
 @property(atomic, strong) UIActivityIndicatorView *spinner;
+@property(atomic) NSUInteger page;
+@property(atomic) BOOL downloading;
 @end
 
 @implementation FlickerViewController
@@ -26,26 +28,34 @@
     self.photoArray = [[NSMutableArray alloc] init];
     self.idArray = [[NSMutableArray alloc] init];
     UINib *cellNib = [UINib nibWithNibName:@"FlickerCollectionViewCell" bundle:nil];
+    self.page = 1;
     [self.collectionView registerNib:cellNib forCellWithReuseIdentifier:@"FlickerCollectionViewCell"];
-    
+    [self downloadImages];
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+-(void)downloadImages {
     dispatch_queue_t concurrentQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     dispatch_async(concurrentQueue, ^{
         dispatch_sync(dispatch_get_main_queue(), ^{
+            self.downloading = YES;
             self.self.spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
             CGRect screenRect = [[UIScreen mainScreen] bounds];
             [self.spinner setCenter:CGPointMake(screenRect.size.width/2, screenRect.size.height/2)];
             [self.view addSubview:self.spinner];
             [self.spinner startAnimating];
         });
-        NSURL* url = [NSURL URLWithString:[NSString stringWithFormat:@"https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=706914e74f4da7d2a5337f9630dc7c19&lat=%@&lon=%@&accuracy=16&per_page=20&page=1&format=json&nojsoncallback=1", self.coordinates.latitude, self.coordinates.longitude]];
+        NSURL* url = [NSURL URLWithString:[NSString stringWithFormat:@"https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=706914e74f4da7d2a5337f9630dc7c19&lat=%@&lon=%@&accuracy=16&per_page=30&page=%lu&format=json&nojsoncallback=1", self.coordinates.latitude, self.coordinates.longitude, self.page]];
         NSData* data = [NSData dataWithContentsOfURL:url];
         NSError* error;
         NSDictionary* json = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
         NSArray *photos = [json[@"photos"] objectForKey:@"photo"];
         
         for (NSDictionary* photo in photos) {
-            //NSLog(@"%@", photo[@"id"]);
-            
             NSURL* photoUrl = [NSURL URLWithString:[NSString stringWithFormat:@"https://api.flickr.com/services/rest/?method=flickr.photos.getSizes&api_key=706914e74f4da7d2a5337f9630dc7c19&photo_id=%@&format=json&nojsoncallback=1", photo[@"id"]]];
             
             NSData* photoData = [NSData dataWithContentsOfURL:photoUrl];
@@ -59,7 +69,6 @@
             
             [self.photoArray addObject: image];
             [self.idArray addObject: photo[@"id"]];
-            NSLog(@"Added id: %@", photo[@"id"]);
             
             dispatch_sync(dispatch_get_main_queue(), ^{
                 [self.collectionView reloadData];
@@ -67,14 +76,9 @@
         }
         dispatch_sync(dispatch_get_main_queue(), ^{
             [self.spinner stopAnimating];
+            self.downloading = NO;
         });
     });
-    
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 /*
@@ -107,6 +111,17 @@
     
     return cell;
 
+}
+
+-(void)scrollViewDidScroll: (UIScrollView*)scrollView{
+    float scrollViewHeight = scrollView.frame.size.height;
+    float scrollContentSizeHeight = scrollView.contentSize.height;
+    float scrollOffset = scrollView.contentOffset.y;
+    
+    if (scrollOffset + scrollViewHeight == scrollContentSizeHeight + 49 && self.downloading == NO) {
+        self.page += 1;
+        [self downloadImages];
+    }
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {

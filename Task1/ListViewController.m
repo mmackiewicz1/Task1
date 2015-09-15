@@ -92,8 +92,6 @@
 */
 
 - (IBAction)startOperations:(id)sender {
-    NSLog(@"Started.");
-    
     self.firstOperation = [[NSInvocationOperation alloc]
                            initWithTarget:self
                            selector:@selector(firstOperationEntry:) object:nil];
