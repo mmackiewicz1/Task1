@@ -56,11 +56,9 @@
         NSArray *photos = [json[@"photos"] objectForKey:@"photo"];
         
         for (NSDictionary* photo in photos) {
-            NSURL* photoUrl = [NSURL URLWithString:[NSString stringWithFormat:@"https://api.flickr.com/services/rest/?method=flickr.photos.getSizes&api_key=706914e74f4da7d2a5337f9630dc7c19&photo_id=%@&format=json&nojsoncallback=1", photo[@"id"]]];
-            
+            NSURL* photoUrl = [NSURL URLWithString:[NSString stringWithFormat:@"https://api.flickr.com/services/rest/?method=flickr.photos.getSizes&api_key=706914e74f4da7d2a5337f9630dc7c19&photo_id=%@&format=json&nojsoncallback=1", photo[@"id"]]];   
             NSData* photoData = [NSData dataWithContentsOfURL:photoUrl];
             NSError* photoError;
-            
             NSDictionary* photoJson = [NSJSONSerialization JSONObjectWithData:photoData options:0 error:&photoError];
             
             NSURL *imageUrl = [NSURL URLWithString:[photoJson[@"sizes"] objectForKey:@"size"][0][@"source"]];
