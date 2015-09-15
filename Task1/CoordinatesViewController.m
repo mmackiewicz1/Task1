@@ -27,7 +27,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.coordinatesList = [NSMutableArray arrayWithArray:[CoreDataHelper fetchDataWithEntityName:@"Coordinates"]];
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Edit" style:UIBarButtonItemStylePlain target:self action:@selector(performEditCoordinates:)];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Delete" style:UIBarButtonItemStylePlain target:self action:@selector(performEditCoordinates:)];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didDismissDetailCoordinatesViewController) name:@"DetailCoordinatesViewControllerDismissed" object:nil];
 }

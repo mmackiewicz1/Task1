@@ -106,7 +106,6 @@
     [self.thirdOperation addDependency:self.secondOperation];
     [self.secondOperation addDependency:self.firstOperation];
     
-    
     self.operationQueue = [[NSOperationQueue alloc] init];
     [self.operationQueue addOperation:self.firstOperation];
     [self.operationQueue addOperation:self.secondOperation];
