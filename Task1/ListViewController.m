@@ -16,6 +16,8 @@
 @property (strong, nonatomic) NSInvocationOperation *secondOperation;
 @property (strong, nonatomic) NSInvocationOperation *thirdOperation;
 @property (strong, nonatomic) NSOperationQueue *operationQueue;
+@property (weak, nonatomic) IBOutlet UIButton *startButton;
+@property (weak, nonatomic) IBOutlet UIButton *resetButton;
 - (IBAction)startOperations:(id)sender;
 - (IBAction)resetOperations:(id)sender;
 @end
@@ -43,6 +45,8 @@
 - (void) firstOperationEntry:(id)paramObject{
     NSLog(@"First operation");
     [[NSOperationQueue mainQueue] addOperationWithBlock:^ {
+        [self.startButton setEnabled:NO];
+        [self.resetButton setEnabled:NO];
         self.squareOne.backgroundColor = [UIColor yellowColor];
     }];
     for (int i = 0; i < 10000; i++) {
@@ -77,6 +81,8 @@
     }
     [[NSOperationQueue mainQueue] addOperationWithBlock:^ {
         self.squareThree.backgroundColor = [UIColor greenColor];
+        [self.startButton setEnabled:YES];
+        [self.resetButton setEnabled:YES];
     }];
 }
 

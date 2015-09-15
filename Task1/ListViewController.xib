@@ -6,9 +6,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ListViewController">
             <connections>
+                <outlet property="resetButton" destination="puM-XC-CQv" id="f7K-5p-BlO"/>
                 <outlet property="squareOne" destination="I6s-cU-clm" id="S8b-iF-Aqo"/>
                 <outlet property="squareThree" destination="18b-nC-y1n" id="u7P-UB-B8J"/>
                 <outlet property="squareTwo" destination="fZ1-5H-aaM" id="qkT-iJ-wX5"/>
+                <outlet property="startButton" destination="wyI-lH-yTZ" id="dN1-u6-OS0"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
