@@ -43,10 +43,12 @@
     dispatch_async(concurrentQueue, ^{
         dispatch_sync(dispatch_get_main_queue(), ^{
             self.downloading = YES;
-            self.self.spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
-            CGRect screenRect = [[UIScreen mainScreen] bounds];
-            [self.spinner setCenter:CGPointMake(screenRect.size.width/2, screenRect.size.height/2)];
-            [self.view addSubview:self.spinner];
+            if (self.spinner == nil) {
+                self.spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+                CGRect screenRect = [[UIScreen mainScreen] bounds];
+                [self.spinner setCenter:CGPointMake(screenRect.size.width/2, screenRect.size.height/2)];
+                [self.view addSubview:self.spinner];
+            }
             [self.spinner startAnimating];
         });
         NSURL* url = [NSURL URLWithString:[NSString stringWithFormat:@"https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=706914e74f4da7d2a5337f9630dc7c19&lat=%@&lon=%@&accuracy=16&per_page=30&page=%lu&format=json&nojsoncallback=1", self.coordinates.latitude, self.coordinates.longitude, self.page]];
