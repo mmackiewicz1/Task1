@@ -9,8 +9,8 @@
 #import "DetailImageViewController.h"
 
 @interface DetailImageViewController ()
-@property (weak, atomic) IBOutlet UIImageView *imageView;
-@property (strong, atomic) UIActivityIndicatorView *spinner;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (strong, nonatomic) UIActivityIndicatorView *spinner;
 @end
 
 @implementation DetailImageViewController

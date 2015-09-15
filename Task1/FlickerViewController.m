@@ -11,11 +11,11 @@
 #import "DetailImageViewController.h"
 
 @interface FlickerViewController ()
-@property(atomic, strong) NSMutableArray *photoArray;
-@property(atomic, strong) NSMutableArray *idArray;
-@property(atomic, strong) UIActivityIndicatorView *spinner;
-@property(atomic) NSUInteger page;
-@property(atomic) BOOL downloading;
+@property(nonatomic, strong) NSMutableArray *photoArray;
+@property(nonatomic, strong) NSMutableArray *idArray;
+@property(nonatomic, strong) UIActivityIndicatorView *spinner;
+@property(nonatomic) NSUInteger page;
+@property(nonatomic) BOOL downloading;
 @end
 
 @implementation FlickerViewController

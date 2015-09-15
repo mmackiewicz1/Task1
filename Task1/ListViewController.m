@@ -12,11 +12,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *squareOne;
 @property (weak, nonatomic) IBOutlet UILabel *squareTwo;
 @property (weak, nonatomic) IBOutlet UILabel *squareThree;
-
-@property (nonatomic, strong) NSInvocationOperation *firstOperation;
-@property (nonatomic, strong) NSInvocationOperation *secondOperation;
-@property (nonatomic, strong) NSInvocationOperation *thirdOperation;
-@property (nonatomic, strong) NSOperationQueue *operationQueue;
+@property (strong, nonatomic) NSInvocationOperation *firstOperation;
+@property (strong, nonatomic) NSInvocationOperation *secondOperation;
+@property (strong, nonatomic) NSInvocationOperation *thirdOperation;
+@property (strong, nonatomic) NSOperationQueue *operationQueue;
 - (IBAction)startOperations:(id)sender;
 - (IBAction)resetOperations:(id)sender;
 @end
