@@ -13,11 +13,8 @@
 #import "FlickerViewController.h"
 
 @interface CoordinatesViewController ()
-@property (strong, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicatorView;
-
+@property(nonatomic, strong) NSMutableArray *coordinatesList;
 @end
-
-NSMutableArray *coordinatesList;
 
 @implementation CoordinatesViewController
 
@@ -29,7 +26,7 @@ NSMutableArray *coordinatesList;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    coordinatesList = [NSMutableArray arrayWithArray:[CoreDataHelper fetchDataWithEntityName:@"Coordinates"]];
+    self.self.coordinatesList = [NSMutableArray arrayWithArray:[CoreDataHelper fetchDataWithEntityName:@"Coordinates"]];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Edit" style:UIBarButtonItemStylePlain target:self action:@selector(performEditCoordinates:)];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didDismissDetailCoordinatesViewController) name:@"DetailCoordinatesViewControllerDismissed" object:nil];
@@ -46,13 +43,13 @@ NSMutableArray *coordinatesList;
 }
 
 - (void)didDismissDetailCoordinatesViewController {
-    coordinatesList = [[NSMutableArray alloc] initWithArray:[CoreDataHelper fetchDataWithEntityName: @"Coordinates"]];
+    self.coordinatesList = [[NSMutableArray alloc] initWithArray:[CoreDataHelper fetchDataWithEntityName: @"Coordinates"]];
     [self.tableView reloadData];
 }
 
 - (void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    coordinatesList = [[NSMutableArray alloc] initWithArray:[CoreDataHelper fetchDataWithEntityName: @"Coordinates"]];
+    self.coordinatesList = [[NSMutableArray alloc] initWithArray:[CoreDataHelper fetchDataWithEntityName: @"Coordinates"]];
     [self.tableView reloadData];
 }
 
@@ -68,7 +65,7 @@ NSMutableArray *coordinatesList;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [coordinatesList count];
+    return [self.coordinatesList count];
 }
 
 
@@ -80,7 +77,7 @@ NSMutableArray *coordinatesList;
         cell = [nib objectAtIndex:0];
     }
     
-    NSString *content = [NSString stringWithFormat:@"Lat: %@ Lon: %@", [[coordinatesList objectAtIndex:indexPath.row] latitude], [[coordinatesList objectAtIndex:indexPath.row] longitude]];
+    NSString *content = [NSString stringWithFormat:@"Lat: %@ Lon: %@", [[self.coordinatesList objectAtIndex:indexPath.row] latitude], [[self.coordinatesList objectAtIndex:indexPath.row] longitude]];
     
     cell.contentLabel.text = content;
     cell.indicator.tag = indexPath.row;
@@ -95,9 +92,9 @@ NSMutableArray *coordinatesList;
 
 - (void) tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
     if (editingStyle == UITableViewCellEditingStyleDelete){
-        BOOL result = [CoreDataHelper removeCoreDataObject: [coordinatesList objectAtIndex: indexPath.row]];
+        BOOL result = [CoreDataHelper removeCoreDataObject: [self.coordinatesList objectAtIndex: indexPath.row]];
         if (result) {
-            [coordinatesList removeObjectAtIndex:indexPath.row];
+            [self.coordinatesList removeObjectAtIndex:indexPath.row];
             [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationLeft];
         } else {
             NSLog(@"Error removing");
@@ -145,14 +142,14 @@ NSMutableArray *coordinatesList;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     FlickerViewController *flickerViewController = [[FlickerViewController alloc] initWithNibName:@"FlickerViewController" bundle: nil];
-    flickerViewController.coordinates = [coordinatesList objectAtIndex:indexPath.row];
+    flickerViewController.coordinates = [self.coordinatesList objectAtIndex:indexPath.row];
     
     [self.navigationController pushViewController:flickerViewController animated: YES];
 }
 
 - (void)indicatorClicked:(UIButton*)sender {
     DetailCoordinatesViewController *detailViewController = [[DetailCoordinatesViewController alloc] initWithNibName:@"DetailCoordinatesViewController" bundle:nil];
-    detailViewController.coordinates = [coordinatesList objectAtIndex:sender.tag];
+    detailViewController.coordinates = [self.coordinatesList objectAtIndex:sender.tag];
     
     [self.navigationController pushViewController:detailViewController animated:YES];
 }

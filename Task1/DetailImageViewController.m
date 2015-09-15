@@ -9,25 +9,39 @@
 #import "DetailImageViewController.h"
 
 @interface DetailImageViewController ()
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, atomic) IBOutlet UIImageView *imageView;
+@property (strong, atomic) UIActivityIndicatorView *spinner;
 @end
 
 @implementation DetailImageViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSURL* photoUrl = [NSURL URLWithString:[NSString stringWithFormat:@"https://api.flickr.com/services/rest/?method=flickr.photos.getSizes&api_key=706914e74f4da7d2a5337f9630dc7c19&photo_id=%@&format=json&nojsoncallback=1", self.imageId]];
-    
-    NSData* photoData = [NSData dataWithContentsOfURL:photoUrl];
-    NSError* photoError;
-    
-    NSDictionary* photoJson = [NSJSONSerialization JSONObjectWithData:photoData options:0 error:&photoError];
-    
-    NSURL *imageUrl = [NSURL URLWithString:[photoJson[@"sizes"] objectForKey:@"size"][5][@"source"]];
-    NSData *imageData = [NSData dataWithContentsOfURL:imageUrl];
-    UIImage *image = [[UIImage alloc] initWithData:imageData];
-    
-    self.imageView.image = image;
+    dispatch_queue_t concurrentQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_async(concurrentQueue, ^{
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            self.spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+            CGRect screenRect = [[UIScreen mainScreen] bounds];
+            [self.spinner setCenter:CGPointMake(screenRect.size.width/2, screenRect.size.height/2)];
+            [self.view addSubview:self.spinner];
+            [self.spinner startAnimating];
+        });
+        NSURL* photoUrl = [NSURL URLWithString:[NSString stringWithFormat:@"https://api.flickr.com/services/rest/?method=flickr.photos.getSizes&api_key=706914e74f4da7d2a5337f9630dc7c19&photo_id=%@&format=json&nojsoncallback=1", self.imageId]];
+        
+        NSData* photoData = [NSData dataWithContentsOfURL:photoUrl];
+        NSError* photoError;
+        
+        NSDictionary* photoJson = [NSJSONSerialization JSONObjectWithData:photoData options:0 error:&photoError];
+        
+        NSURL *imageUrl = [NSURL URLWithString:[photoJson[@"sizes"] objectForKey:@"size"][5][@"source"]];
+        NSData *imageData = [NSData dataWithContentsOfURL:imageUrl];
+        UIImage *image = [[UIImage alloc] initWithData:imageData];
+        
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            [self.spinner stopAnimating];
+            self.imageView.image = image;
+        });
+    });
 }
 
 - (void)didReceiveMemoryWarning {
