@@ -40,10 +40,8 @@
         CLLocationCoordinate2D coordinate;
         coordinate.latitude = [coordinateEntity.latitude doubleValue];
         coordinate.longitude = [coordinateEntity.longitude doubleValue];
-        //NSLog(@"Coordinate: %@", coordinate);
         Annotation *annotation = [[Annotation alloc] initWithCoordinates:coordinate
-                                                                   title:[NSString stringWithFormat:@"%f %f", coordinate.latitude, coordinate.longitude]
-                                                                subTitle:[NSString stringWithFormat:@"%f %f", coordinate.latitude, coordinate.longitude]];
+                                                                   title:[NSString stringWithFormat:@"Lat: %f Lon: %f", coordinate.latitude, coordinate.longitude] subTitle:nil];
         [self.mapView addAnnotation:annotation];
     }
 }
