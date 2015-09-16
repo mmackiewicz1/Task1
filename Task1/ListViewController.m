@@ -18,6 +18,9 @@
 @property (strong, nonatomic) NSOperationQueue *operationQueue;
 @property (weak, nonatomic) IBOutlet UIButton *startButton;
 @property (weak, nonatomic) IBOutlet UIButton *resetButton;
+@property (weak, nonatomic) IBOutlet UIProgressView *taskOneProgressView;
+@property (weak, nonatomic) IBOutlet UIProgressView *taskTwoProgressView;
+@property (weak, nonatomic) IBOutlet UIProgressView *taskThreeProgressView;
 - (IBAction)startOperations:(id)sender;
 - (IBAction)resetOperations:(id)sender;
 @end
@@ -35,6 +38,10 @@
     self.squareOne.backgroundColor = [UIColor redColor];
     self.squareTwo.backgroundColor = [UIColor redColor];
     self.squareThree.backgroundColor = [UIColor redColor];
+
+    self.taskOneProgressView.progress = 0.0;
+    self.taskTwoProgressView.progress = 0.0;
+    self.taskThreeProgressView.progress = 0.0;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -49,8 +56,10 @@
         [self.resetButton setEnabled:NO];
         self.squareOne.backgroundColor = [UIColor yellowColor];
     }];
-    for (int i = 0; i < 10000; i++) {
-        NSLog(@"First loop: %d", i);
+    for (int i = 1; i <= 10000; i++) {
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^ {
+            self.taskOneProgressView.progress = i/10000.0;
+        }];
     }
     [[NSOperationQueue mainQueue] addOperationWithBlock:^ {
         self.squareOne.backgroundColor = [UIColor greenColor];
@@ -62,8 +71,10 @@
     [[NSOperationQueue mainQueue] addOperationWithBlock:^ {
         self.squareTwo.backgroundColor = [UIColor yellowColor];
     }];
-    for (int i = 0; i < 10000; i++) {
-        NSLog(@"Second loop: %d", i);
+    for (int i = 1; i <= 10000; i++) {
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^ {
+            self.taskTwoProgressView.progress = i/10000.0;
+        }];
     }
     [[NSOperationQueue mainQueue] addOperationWithBlock:^ {
         self.squareTwo.backgroundColor = [UIColor greenColor];
@@ -75,9 +86,10 @@
     [[NSOperationQueue mainQueue] addOperationWithBlock:^ {
         self.squareThree.backgroundColor = [UIColor yellowColor];
     }];
-    
-    for (int i = 0; i < 10000; i++) {
-        NSLog(@"Third loop: %d", i);
+    for (int i = 1; i <= 10000; i++) {
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^ {
+            self.taskThreeProgressView.progress = i/10000.0;
+        }];
     }
     [[NSOperationQueue mainQueue] addOperationWithBlock:^ {
         self.squareThree.backgroundColor = [UIColor greenColor];
