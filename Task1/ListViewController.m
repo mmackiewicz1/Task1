@@ -45,6 +45,7 @@
  */
 - (void)viewDidLoad {
     [super viewDidLoad];
+
     self.squareOne.backgroundColor = [UIColor redColor];
     self.squareTwo.backgroundColor = [UIColor redColor];
     self.squareThree.backgroundColor = [UIColor redColor];
@@ -68,11 +69,10 @@
  *  @param paramObject Parameter Object.
  */
 - (void) firstOperationEntry:(id)paramObject{
-    NSLog(@"First operation");
-    
     [[NSOperationQueue mainQueue] addOperationWithBlock:^ {
         [self.startButton setEnabled:NO];
         [self.resetButton setEnabled:NO];
+        NSLog(@"First operation");
         self.squareOne.backgroundColor = [UIColor yellowColor];
     }];
     
@@ -93,9 +93,8 @@
  *  @param paramObject Parameter Object.
  */
 - (void) secondOperationEntry:(id)paramObject{
-    NSLog(@"Second operation");
-    
     [[NSOperationQueue mainQueue] addOperationWithBlock:^ {
+        NSLog(@"Second operation");
         self.squareTwo.backgroundColor = [UIColor yellowColor];
     }];
     
@@ -116,9 +115,8 @@
  *  @param paramObject Parameter Object.
  */
 - (void) thirdOperationEntry:(id)paramObject{
-    NSLog(@"Third operation");
-    
     [[NSOperationQueue mainQueue] addOperationWithBlock:^ {
+        NSLog(@"Third operation");
         self.squareThree.backgroundColor = [UIColor yellowColor];
     }];
     
