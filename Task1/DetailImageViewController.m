@@ -17,8 +17,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     dispatch_queue_t concurrentQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    
     dispatch_async(concurrentQueue, ^{
+        
         dispatch_sync(dispatch_get_main_queue(), ^{
             self.spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
             CGRect screenRect = [[UIScreen mainScreen] bounds];
@@ -26,11 +29,11 @@
             [self.view addSubview:self.spinner];
             [self.spinner startAnimating];
         });
+        
         NSURL* photoUrl = [NSURL URLWithString:[NSString stringWithFormat:@"https://api.flickr.com/services/rest/?method=flickr.photos.getSizes&api_key=706914e74f4da7d2a5337f9630dc7c19&photo_id=%@&format=json&nojsoncallback=1", self.imageId]];
         
         NSData* photoData = [NSData dataWithContentsOfURL:photoUrl];
         NSError* photoError;
-        
         NSDictionary* photoJson = [NSJSONSerialization JSONObjectWithData:photoData options:0 error:&photoError];
         
         NSURL *imageUrl = [NSURL URLWithString:[photoJson[@"sizes"] objectForKey:@"size"][5][@"source"]];

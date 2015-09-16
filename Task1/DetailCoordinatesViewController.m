@@ -19,6 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     self.title = @"Edit coordinates";
     self.inputLatitude.text = [NSString stringWithFormat:@"%@", self.coordinates.latitude];
     self.inputLongitude.text = [NSString stringWithFormat:@"%@", self.coordinates.longitude];

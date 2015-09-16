@@ -22,6 +22,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
     
@@ -41,6 +42,7 @@
 -(void)downloadImages {
     dispatch_queue_t concurrentQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     dispatch_async(concurrentQueue, ^{
+        
         dispatch_sync(dispatch_get_main_queue(), ^{
             self.downloading = YES;
             if (self.spinner == nil) {
@@ -51,6 +53,7 @@
             }
             [self.spinner startAnimating];
         });
+        
         NSURL* url = [NSURL URLWithString:[NSString stringWithFormat:@"https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=706914e74f4da7d2a5337f9630dc7c19&lat=%@&lon=%@&accuracy=16&per_page=30&page=%lu&format=json&nojsoncallback=1", self.coordinates.latitude, self.coordinates.longitude, self.page]];
         NSData* data = [NSData dataWithContentsOfURL:url];
         NSError* error;
@@ -74,6 +77,7 @@
                 [self.collectionView reloadData];
             });
         }
+        
         dispatch_sync(dispatch_get_main_queue(), ^{
             [self.spinner stopAnimating];
             self.downloading = NO;

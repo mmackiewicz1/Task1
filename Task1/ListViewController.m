@@ -30,6 +30,7 @@
 - (id)init {
     self = [super init];
     self.title = @"List";
+    
     return self;
 }
 
@@ -51,16 +52,19 @@
 
 - (void) firstOperationEntry:(id)paramObject{
     NSLog(@"First operation");
+    
     [[NSOperationQueue mainQueue] addOperationWithBlock:^ {
         [self.startButton setEnabled:NO];
         [self.resetButton setEnabled:NO];
         self.squareOne.backgroundColor = [UIColor yellowColor];
     }];
+    
     for (int i = 1; i <= 10000; i++) {
         [[NSOperationQueue mainQueue] addOperationWithBlock:^ {
             self.taskOneProgressView.progress = i/10000.0;
         }];
     }
+    
     [[NSOperationQueue mainQueue] addOperationWithBlock:^ {
         self.squareOne.backgroundColor = [UIColor greenColor];
     }];
@@ -68,14 +72,17 @@
 
 - (void) secondOperationEntry:(id)paramObject{
     NSLog(@"Second operation");
+    
     [[NSOperationQueue mainQueue] addOperationWithBlock:^ {
         self.squareTwo.backgroundColor = [UIColor yellowColor];
     }];
+    
     for (int i = 1; i <= 10000; i++) {
         [[NSOperationQueue mainQueue] addOperationWithBlock:^ {
             self.taskTwoProgressView.progress = i/10000.0;
         }];
     }
+    
     [[NSOperationQueue mainQueue] addOperationWithBlock:^ {
         self.squareTwo.backgroundColor = [UIColor greenColor];
     }];
@@ -83,14 +90,17 @@
 
 - (void) thirdOperationEntry:(id)paramObject{
     NSLog(@"Third operation");
+    
     [[NSOperationQueue mainQueue] addOperationWithBlock:^ {
         self.squareThree.backgroundColor = [UIColor yellowColor];
     }];
+    
     for (int i = 1; i <= 10000; i++) {
         [[NSOperationQueue mainQueue] addOperationWithBlock:^ {
             self.taskThreeProgressView.progress = i/10000.0;
         }];
     }
+    
     [[NSOperationQueue mainQueue] addOperationWithBlock:^ {
         self.squareThree.backgroundColor = [UIColor greenColor];
         [self.startButton setEnabled:YES];
@@ -109,17 +119,9 @@
 */
 
 - (IBAction)startOperations:(id)sender {
-    self.firstOperation = [[NSInvocationOperation alloc]
-                           initWithTarget:self
-                           selector:@selector(firstOperationEntry:) object:nil];
-    
-    self.secondOperation = [[NSInvocationOperation alloc]
-                            initWithTarget:self
-                            selector:@selector(secondOperationEntry:) object:nil];
-    
-    self.thirdOperation = [[NSInvocationOperation alloc]
-                            initWithTarget:self
-                            selector:@selector(thirdOperationEntry:) object:nil];
+    self.firstOperation = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(firstOperationEntry:) object:nil];
+    self.secondOperation = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(secondOperationEntry:) object:nil];
+    self.thirdOperation = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(thirdOperationEntry:) object:nil];
     
     [self.thirdOperation addDependency:self.secondOperation];
     [self.secondOperation addDependency:self.firstOperation];
