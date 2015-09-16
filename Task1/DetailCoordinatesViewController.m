@@ -39,6 +39,18 @@
     // Dispose of any resources that can be recreated.
 }
 
+/**
+ *  Hides the keyboard upon clicking "Return".
+ *
+ *  @param textField Text field present in the view.
+ *
+ *  @return If text field should remain.
+ */
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return NO;
+}
+
 /*
 #pragma mark - Navigation
 
@@ -65,11 +77,6 @@
         [[NSNotificationCenter defaultCenter] postNotificationName:@"DetailCoordinatesViewControllerDismissed" object:nil userInfo:nil];
         [self.navigationController popViewControllerAnimated:YES];
     }
-}
-
-- (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    [textField resignFirstResponder];
-    return NO;
 }
 
 @end
