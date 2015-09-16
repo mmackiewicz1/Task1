@@ -134,6 +134,10 @@
     self.squareOne.backgroundColor = [UIColor redColor];
     self.squareTwo.backgroundColor = [UIColor redColor];
     self.squareThree.backgroundColor = [UIColor redColor];
+    
+    self.taskOneProgressView.progress = 0.0;
+    self.taskTwoProgressView.progress = 0.0;
+    self.taskThreeProgressView.progress = 0.0;
 }
 
 @end
