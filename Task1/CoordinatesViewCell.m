@@ -11,7 +11,11 @@
 @implementation CoordinatesViewCell
 
 - (void)awakeFromNib {
+    [self.indicator addTarget:self action:@selector(buttonHighlight:) forControlEvents:UIControlEventTouchDown];
+}
 
+- (void)buttonHighlight:(UIButton*)sender {
+    [sender setHighlighted:YES];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
