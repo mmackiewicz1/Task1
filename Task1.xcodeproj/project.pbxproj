@@ -131,33 +131,12 @@
 		D25E07CE1BA1C80400C3C586 /* Task1 */ = {
 			isa = PBXGroup;
 			children = (
-				D25E080F1BA2BBF300C3C586 /* Model */,
 				D25E07D31BA1C80400C3C586 /* AppDelegate.h */,
 				D25E07D41BA1C80400C3C586 /* AppDelegate.m */,
-				D25E07F81BA2A72500C3C586 /* MapViewController.h */,
-				D25E07F91BA2A72500C3C586 /* MapViewController.m */,
-				D25E07FA1BA2A72500C3C586 /* MapViewController.xib */,
-				D25E081A1BA2CD8200C3C586 /* CoordinatesViewController.h */,
-				D25E081B1BA2CD8200C3C586 /* CoordinatesViewController.m */,
-				D25E081C1BA2CD8200C3C586 /* CoordinatesViewController.xib */,
-				D25E081F1BA2CF5600C3C586 /* CoordinatesViewCell.h */,
-				D25E08201BA2CF5600C3C586 /* CoordinatesViewCell.m */,
-				D25E08211BA2CF5600C3C586 /* CoordinatesViewCell.xib */,
-				D25E08241BA3083300C3C586 /* DetailCoordinatesViewController.h */,
-				D25E08251BA3083300C3C586 /* DetailCoordinatesViewController.m */,
-				D25E08261BA3083300C3C586 /* DetailCoordinatesViewController.xib */,
-				D25E08301BA6BCF000C3C586 /* FlickerViewController.h */,
-				D25E08311BA6BCF000C3C586 /* FlickerViewController.m */,
-				D25E08321BA6BCF000C3C586 /* FlickerViewController.xib */,
-				D25E083A1BA6C34D00C3C586 /* FlickerCollectionViewCell.h */,
-				D25E083B1BA6C34D00C3C586 /* FlickerCollectionViewCell.m */,
-				D25E083C1BA6C34D00C3C586 /* FlickerCollectionViewCell.xib */,
-				D25E08441BA700F100C3C586 /* DetailImageViewController.h */,
-				D25E08451BA700F100C3C586 /* DetailImageViewController.m */,
-				D25E08461BA700F100C3C586 /* DetailImageViewController.xib */,
-				D25E08021BA2A82600C3C586 /* ListViewController.h */,
-				D25E08031BA2A82600C3C586 /* ListViewController.m */,
-				D25E08041BA2A82600C3C586 /* ListViewController.xib */,
+				D25E08491BA943CA00C3C586 /* Map View */,
+				D25E084A1BA943E400C3C586 /* Coordinates Manager */,
+				D25E084B1BA9441300C3C586 /* Task Queue */,
+				D25E080F1BA2BBF300C3C586 /* Models */,
 				D25E07DF1BA1C80400C3C586 /* Images.xcassets */,
 				D25E07D61BA1C80400C3C586 /* Task1.xcdatamodeld */,
 				D25E07CF1BA1C80400C3C586 /* Supporting Files */,
@@ -194,7 +173,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		D25E080F1BA2BBF300C3C586 /* Model */ = {
+		D25E080F1BA2BBF300C3C586 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				D25E08071BA2AAD100C3C586 /* Annotation.h */,
@@ -202,7 +181,52 @@
 				D25E080C1BA2BBE900C3C586 /* Coordinates.h */,
 				D25E080D1BA2BBE900C3C586 /* Coordinates.m */,
 			);
-			name = Model;
+			name = Models;
+			sourceTree = "<group>";
+		};
+		D25E08491BA943CA00C3C586 /* Map View */ = {
+			isa = PBXGroup;
+			children = (
+				D25E07F81BA2A72500C3C586 /* MapViewController.h */,
+				D25E07F91BA2A72500C3C586 /* MapViewController.m */,
+				D25E07FA1BA2A72500C3C586 /* MapViewController.xib */,
+			);
+			name = "Map View";
+			sourceTree = "<group>";
+		};
+		D25E084A1BA943E400C3C586 /* Coordinates Manager */ = {
+			isa = PBXGroup;
+			children = (
+				D25E081A1BA2CD8200C3C586 /* CoordinatesViewController.h */,
+				D25E081B1BA2CD8200C3C586 /* CoordinatesViewController.m */,
+				D25E081C1BA2CD8200C3C586 /* CoordinatesViewController.xib */,
+				D25E081F1BA2CF5600C3C586 /* CoordinatesViewCell.h */,
+				D25E08201BA2CF5600C3C586 /* CoordinatesViewCell.m */,
+				D25E08211BA2CF5600C3C586 /* CoordinatesViewCell.xib */,
+				D25E08241BA3083300C3C586 /* DetailCoordinatesViewController.h */,
+				D25E08251BA3083300C3C586 /* DetailCoordinatesViewController.m */,
+				D25E08261BA3083300C3C586 /* DetailCoordinatesViewController.xib */,
+				D25E08301BA6BCF000C3C586 /* FlickerViewController.h */,
+				D25E08311BA6BCF000C3C586 /* FlickerViewController.m */,
+				D25E08321BA6BCF000C3C586 /* FlickerViewController.xib */,
+				D25E083A1BA6C34D00C3C586 /* FlickerCollectionViewCell.h */,
+				D25E083B1BA6C34D00C3C586 /* FlickerCollectionViewCell.m */,
+				D25E083C1BA6C34D00C3C586 /* FlickerCollectionViewCell.xib */,
+				D25E08441BA700F100C3C586 /* DetailImageViewController.h */,
+				D25E08451BA700F100C3C586 /* DetailImageViewController.m */,
+				D25E08461BA700F100C3C586 /* DetailImageViewController.xib */,
+			);
+			name = "Coordinates Manager";
+			sourceTree = "<group>";
+		};
+		D25E084B1BA9441300C3C586 /* Task Queue */ = {
+			isa = PBXGroup;
+			children = (
+				D25E08021BA2A82600C3C586 /* ListViewController.h */,
+				D25E08031BA2A82600C3C586 /* ListViewController.m */,
+				D25E08041BA2A82600C3C586 /* ListViewController.xib */,
+			);
+			name = "Task Queue";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
