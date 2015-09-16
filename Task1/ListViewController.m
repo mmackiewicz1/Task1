@@ -21,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet UIProgressView *taskOneProgressView;
 @property (weak, nonatomic) IBOutlet UIProgressView *taskTwoProgressView;
 @property (weak, nonatomic) IBOutlet UIProgressView *taskThreeProgressView;
+
 - (IBAction)startOperations:(id)sender;
 - (IBAction)resetOperations:(id)sender;
 @end

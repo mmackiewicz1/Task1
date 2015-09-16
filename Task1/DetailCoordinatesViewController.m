@@ -12,6 +12,7 @@
 @interface DetailCoordinatesViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *inputLatitude;
 @property (weak, nonatomic) IBOutlet UITextField *inputLongitude;
+
 - (IBAction)submitCoordinates:(id)sender;
 @end
 
