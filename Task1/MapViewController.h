@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 
+/**
+ *  Controller responsible for the map.
+ */
 @interface MapViewController : UIViewController<MKMapViewDelegate>
 
 @end

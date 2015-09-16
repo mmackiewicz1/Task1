@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ *  Controller for Collection View cell.
+ */
 @interface FlickerCollectionViewCell : UICollectionViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *image;
-
 @end

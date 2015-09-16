@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "Coordinates.h"
 
-@interface DetailCoordinatesViewController : UIViewController
+/**
+ *  Controller for editing the coordinates presented in CoordinatesViewController.
+ */
+@interface DetailCoordinatesViewController : UIViewController<UITextFieldDelegate>
 @property(weak, nonatomic) Coordinates *coordinates;
 @end

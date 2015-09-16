@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ *  Controller for table view cells in CoordinatesViewController.
+ */
 @interface CoordinatesViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIButton *indicator;
 @property (weak, nonatomic) IBOutlet UILabel *contentLabel;

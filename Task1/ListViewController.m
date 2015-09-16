@@ -28,6 +28,11 @@
 
 @implementation ListViewController
 
+/**
+ *  Initializes the object without parameters
+ *
+ *  @return instance object.
+ */
 - (id)init {
     self = [super init];
     self.title = @"List";
@@ -35,6 +40,9 @@
     return self;
 }
 
+/**
+ *  Invoked when the view loads for the first time.
+ */
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.squareOne.backgroundColor = [UIColor redColor];
@@ -46,11 +54,19 @@
     self.taskThreeProgressView.progress = 0.0;
 }
 
+/**
+ *  Invoked when object receives memory warning.
+ */
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
+/**
+ *  First operation.
+ *
+ *  @param paramObject Parameter Object.
+ */
 - (void) firstOperationEntry:(id)paramObject{
     NSLog(@"First operation");
     
@@ -71,6 +87,11 @@
     }];
 }
 
+/**
+ *  Second operation.
+ *
+ *  @param paramObject Parameter Object.
+ */
 - (void) secondOperationEntry:(id)paramObject{
     NSLog(@"Second operation");
     
@@ -89,6 +110,11 @@
     }];
 }
 
+/**
+ *  Third operation.
+ *
+ *  @param paramObject Parameter Object.
+ */
 - (void) thirdOperationEntry:(id)paramObject{
     NSLog(@"Third operation");
     
@@ -119,6 +145,11 @@
 }
 */
 
+/**
+ *  Invoked when we click the Start button.
+ *
+ *  @param sender Sender.
+ */
 - (IBAction)startOperations:(id)sender {
     self.firstOperation = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(firstOperationEntry:) object:nil];
     self.secondOperation = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(secondOperationEntry:) object:nil];
@@ -133,6 +164,11 @@
     [self.operationQueue addOperation:self.thirdOperation];
 }
 
+/**
+ *  Invoked when we click the Reset button.
+ *
+ *  @param sender Sender.
+ */
 - (IBAction)resetOperations:(id)sender {
     self.squareOne.backgroundColor = [UIColor redColor];
     self.squareTwo.backgroundColor = [UIColor redColor];

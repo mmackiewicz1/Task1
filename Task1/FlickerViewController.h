@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "Coordinates.h"
 
+/**
+ *  Controller which shows images from Flickr website by using its rest api.
+ */
 @interface FlickerViewController : UIViewController<UICollectionViewDelegate, UICollectionViewDataSource>
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (weak, nonatomic) Coordinates *coordinates;

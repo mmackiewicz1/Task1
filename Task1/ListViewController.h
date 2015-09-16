@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ *  Controller for the list of tasks.
+ */
 @interface ListViewController : UIViewController
 
 @end

@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ *  Controller responsible for the list of the coordinates.
+ */
 @interface CoordinatesViewController : UITableViewController
 
 @end

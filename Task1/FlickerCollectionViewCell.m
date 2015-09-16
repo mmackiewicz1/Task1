@@ -10,6 +10,9 @@
 
 @implementation FlickerCollectionViewCell
 
+/**
+ *  Invoked when awoken from Nib.
+ */
 - (void)awakeFromNib {
     // Initialization code
 }

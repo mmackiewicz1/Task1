@@ -15,13 +15,15 @@
 
 @implementation DetailImageViewController
 
+/**
+ *  Invoked when the view loads for the first time.
+ */
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     dispatch_queue_t concurrentQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     
     dispatch_async(concurrentQueue, ^{
-        
         dispatch_sync(dispatch_get_main_queue(), ^{
             self.spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
             CGRect screenRect = [[UIScreen mainScreen] bounds];
@@ -47,6 +49,9 @@
     });
 }
 
+/**
+ *  Invoked when object receives memory warning.
+ */
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

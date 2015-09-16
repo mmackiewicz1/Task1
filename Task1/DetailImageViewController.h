@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ *  Controller for the detailed image view.
+ */
 @interface DetailImageViewController : UIViewController
 @property(weak, nonatomic) NSString* imageId;
 

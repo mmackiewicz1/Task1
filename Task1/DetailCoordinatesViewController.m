@@ -16,16 +16,24 @@
 - (IBAction)submitCoordinates:(id)sender;
 @end
 
+/**
+ *  Invoked when the view loads for the first time.
+ */
 @implementation DetailCoordinatesViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.title = @"Edit coordinates";
+    self.inputLatitude.delegate = self;
+    self.inputLongitude.delegate = self;
     self.inputLatitude.text = [NSString stringWithFormat:@"%@", self.coordinates.latitude];
     self.inputLongitude.text = [NSString stringWithFormat:@"%@", self.coordinates.longitude];
 }
 
+/**
+ *  Invoked when object receives memory warning.
+ */
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -41,6 +49,11 @@
 }
 */
 
+/**
+ *  Invoked when we want to submit new coordinates data.
+ *
+ *  @param sender Button sender.
+ */
 - (IBAction)submitCoordinates:(id)sender {
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
     formatter.numberStyle = NSNumberFormatterDecimalStyle;
@@ -53,4 +66,10 @@
         [self.navigationController popViewControllerAnimated:YES];
     }
 }
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return NO;
+}
+
 @end

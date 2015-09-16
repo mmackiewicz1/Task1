@@ -18,12 +18,20 @@
 
 @implementation MapViewController
 
+/**
+ *  Initializes the object without parameters
+ *
+ *  @return instance object.
+ */
 - (id)init {
     self = [super init];
     self.title = @"Map";
     return self;
 }
 
+/**
+ *  Invoked when the view loads for the first time.
+ */
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -34,6 +42,28 @@
     [self loadCoordinates];
 }
 
+/**
+ *  Invoked when object receives memory warning.
+ */
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+/**
+ *  Invoked when the view appears
+ *
+ *  @param animated If view is supposed to be animated
+ */
+- (void) viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.mapView removeAnnotations:self.mapView.annotations];
+    [self loadCoordinates];
+}
+
+/**
+ *  Loads the coordinates from the database and puts them on the map along with the annotations.
+ */
 - (void) loadCoordinates {
     NSArray *coordinatesList = [CoreDataHelper fetchDataWithEntityName:@"Coordinates"];
     for (Coordinates *coordinateEntity in coordinatesList) {
@@ -46,17 +76,9 @@
     }
 }
 
-- (void) viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    [self.mapView removeAnnotations:self.mapView.annotations];
-    [self loadCoordinates];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
+/**
+ *  Invoked the map is pressed. Inserts coordinate data into database and puts a pin on the map. The pin is placed where the click was performed.
+ */
 - (void)mapPress:(UILongPressGestureRecognizer *)gestureRecognizer{
     if(gestureRecognizer.state == UIGestureRecognizerStateBegan){
         CGPoint touchLocation = [gestureRecognizer locationInView:self.mapView];

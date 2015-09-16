@@ -17,7 +17,14 @@
 
 @implementation AppDelegate
 
-
+/**
+ *  Invoked when application is launched.
+ *
+ *  @param application   The application parameter.
+ *  @param launchOptions Options how the application should be launched
+ *
+ *  @return If the application launched successfully.
+ */
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     MapViewController *mapViewController = [[MapViewController alloc] init];
     CoordinatesViewController *coordinatesViewController = [[CoordinatesViewController alloc] init];

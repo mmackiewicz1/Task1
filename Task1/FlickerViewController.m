@@ -20,6 +20,9 @@
 
 @implementation FlickerViewController
 
+/**
+ *  Invoked when the view loads for the first time.
+ */
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -34,15 +37,20 @@
     [self downloadImages];
 }
 
+/**
+ *  Invoked when object receives memory warning.
+ */
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
+/**
+ *  Downloads images according to saved coordinates.
+ */
 -(void)downloadImages {
     dispatch_queue_t concurrentQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     dispatch_async(concurrentQueue, ^{
-        
         dispatch_sync(dispatch_get_main_queue(), ^{
             self.downloading = YES;
             if (self.spinner == nil) {
@@ -97,17 +105,38 @@
 
 #pragma mark - Collection View
 
+/**
+ *  Sets bumber of sections in the collection view.
+ *
+ *  @param collectionView Collection view.
+ *
+ *  @return Number of sections in the collection view.
+ */
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView*)collectionView {
     return 1;
 }
 
-/* For now, we won't return any sections */
+/**
+ *  Sets number of items in the collection view's section.
+ *
+ *  @param collectionView Collection view.
+ *  @param section        Collection view's number of sections.
+ *
+ *  @return Number of items in the collection view's section.
+ */
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     return [self.photoArray count];
 
 }
-/* We don't yet know how we can return cells to the collection view so
- let's return nil for now */
+
+/**
+ *  Sets collection views cell content.
+ *
+ *  @param collectionView Collection view.
+ *  @param indexPath      Index's path.
+ *
+ *  @return Collection view's cell.
+ */
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *cellIdentifier = @"FlickerCollectionViewCell";
     FlickerCollectionViewCell *cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
@@ -117,6 +146,11 @@
 
 }
 
+/**
+ *  Invoked when the collection view scrolls.
+ *
+ *  @param scrollView Scroll view.
+ */
 -(void)scrollViewDidScroll: (UIScrollView*)scrollView{
     float scrollViewHeight = scrollView.frame.size.height;
     float scrollContentSizeHeight = scrollView.contentSize.height;
@@ -128,6 +162,12 @@
     }
 }
 
+/**
+ *  Establishes what happens when we edit a collection view's row.
+ *
+ *  @param collectionView Collection view.
+ *  @param indexPath      Index's path.
+ */
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     DetailImageViewController *detailImageViewController = [[DetailImageViewController alloc] initWithNibName:@"DetailImageViewController" bundle:nil];
     detailImageViewController.imageId = [self.idArray objectAtIndex: indexPath.row];
